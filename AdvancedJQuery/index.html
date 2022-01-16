@@ -1,0 +1,84 @@
+
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Sneaker History</title>
+        <link href="css/home.css" rel="stylesheet">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            h3 {
+                background: url(images/open.png) no-repeat 0 11px;
+                padding: 10px 0 0 25px;
+                cursor: pointer;
+            }
+            h3.close {
+                background-image: url(images/close.png);
+            }
+            .answer {
+                margin-left: 25px;
+            }
+            .pullquote {
+                float: right;
+                clear: right;
+                width: 200px;
+                padding: 10px;
+                font-size: 20px;
+                background-color: lightcyan;
+                border-radius: 10px;
+                margin: 20px 0 10px 10px;
+                font-style: italic;
+            }
+
+
+
+        </style>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+        <script src="js/jquery-ui.min.js"></script>
+
+        <script>
+            $(document).ready(function () {
+                //this is the quotes
+                $('span.pq').each(function () {
+                    var quote = $(this).clone();
+                    quote.removeClass('pq');
+                    quote.addClass('pullquote');
+                    $(this).before(quote);
+                }); // end each and quotes
+
+            }); // end ready
+        </script>
+    </head>
+    <body>
+			<ul>
+				<li><a class="active" href="index.html">Home</a></li>
+				<li><a href="top.html">Top Sneakers</a></li>
+				<li><a href="images.html">Unbox Some Sneakers</a></li>
+</ul><br>
+        <div class="wrapper">
+
+
+            <div class="content">
+                <div class="main">
+                    <h1 class="header1">A Brief History of Sneaker Culture</h1>
+                    <h2 class="header">The Beginning</h2>
+                    <p>The origin of the sneaker can trace its history back to the late 18th century, with an invention refereed to as “plimsolls.” They were rather rough, rubber-soled shoes that were originally sold by the Liverpool Rubber Company and marketed as beachwear. They had no “left” or “right” shoe, and were a rather plain and simple utility shoes. It wasn’t until the U.S Rubber company, nearly 60 year later, developed a more refined and mass-produced version of this concept—canvas rubber soled shoes called Keds.<span class="pq">They received the slang name of “sneakers” because it was said that they were so quiet, that whoever was wearing them could easily sneak up on you.</span></p>
+                    <h2 class="header">Becoming A Status Symbol</h2>
+                    <p>In 1984, a collaboration between basketball star Michael Jordan and Nike, Inc. would change the landscape of sneakers forever. The launch of the Air Jordan would send competitors scrambling to change the way sneakers are made. Today, the Air Jordan sneaker is still one of the bestselling lines of sneakers of all time. Many consider it to be the “grandfather” of all modern sneakers. This marriage of beautiful design with function pushed shoe manufacturers to see sneakers as more than just tools, but rather a status symbol that consumers would pay top dollar for.
+
+They say imitation is the most sincere form of flattery. In the case of sneakers, everyone wanted to recreate the success Nike had with Air Jordans. Trying to make lighting strike twice, competing companies like Reebok and Adidas would try to recreate the aesthetic of the Air Jordan, even mixing in exotic colors, developing new comfort technologies like ‘the pump’ that would fill your sneaker with air for a better fit.<span class="pq">Everyone wanted in on the craze. Adidas would lateer sign a deal with hip-hop duo Run-D.M.C to promote their Adidas sneakers.</span> This would launch the first signs of “celebrity” footwear. On school yards, and city streets across the world, your footwear could say a lot about your social status in the mid-80’s.</p>
+
+                    <h2 class="header">Sneaker Culture Now</h2>
+                    <p><span class="pq">Today, the sneaker industry brings in nearly $60 billion annually, and hundreds of millions of dollars are spent in research, development, and branding.</span>All to advance the technology of sneakers, and how we view footwear. Today, celebrities and athletes alike sign multi-million-dollar collaboration deals with manufacturers. From the Kanye West “Yeezys” by Adidas, to the LeBron James / Nike collaboration, consumers and enthusiasts will wait in line for hours, and cast their names into online raffles, all for the chance to get the newest, and most exclusive sneakers on the market. The influence of sneakers and sneaker culture can be seen in politics, design, research, and manufacturing across the globe.
+
+What began as a humble rubber company invention, to the industry juggernaut that it is today, sneakers have changed the way we view footwear forever. And the innovation, technological advancements, and iconic fashion presence of sneakers show no sign of slowing down.</p>
+
+
+
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
