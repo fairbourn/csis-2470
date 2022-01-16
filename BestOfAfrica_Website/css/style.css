@@ -1,0 +1,98 @@
+body {
+    background-image: url(../images/sprinkles.png);
+    font-family: Garamond, serif;
+}
+
+#navbar {
+    max-width: 80%;
+}
+
+#founder,
+#country {
+    border-radius: 8px;
+    padding: 5px;
+    width: 500px;
+    height: 550px;
+}
+
+p {
+    text-align: center;
+}
+
+.row {
+    padding-top: 50px;
+}
+
+h1 {
+    text-align: center;
+    padding-bottom: 25px;
+}
+
+    {
+    align-content: center;
+}
+
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+.info {
+    border-color: #4f2f2f;
+    border-style: groove;
+    border-radius: 8px;
+    margin: 20px;
+    padding: 7px;
+    font-size: 30px;
+    color: burlywood;
+    background-color: darkslategrey;
+    background-blend-mode: overlay;
+}
+
+h1 {
+    font-size: 50px;
+}
+
+li:hover {
+    background-color: #D2E7EC;
+    color: white;
+    border-radius: 5px;
+}
+
+.active {
+    color: #6fc380;
+}
+
+.ul {
+    color: #6fb2c3;
+}
+
+li {
+    padding: 4px;
+    text-align: center;
+    font-size: 22px;
+}
+
+#logo {
+    max-height: 400px;
+    max-width: 400px;
+    align-content: flex-start;
+    border-radius: 6px;
+    border-color: #88c36f;
+    border-style: solid;
+    border-width: 3px;
+}
+
+#footer-img {
+    max-height: 50px;
+    max-width: 50px;
+    margin-left: 5px;
+}
+
+.navbar-brand {
+    font-family: 'Righteous', cursive;
+    font-style: italic;
+    font-size: 50px;
+}
