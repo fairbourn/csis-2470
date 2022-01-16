@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sneaker Quiz</title>
+  <link rel="stylesheet" type="text/css" href="../dist/jquery.quiz-min.css" />
+</head>
+<body>
+<div id="quiz">
+  <div id="quiz-header">
+    <h1>Sneaker Head Quiz</h1>
+    <p><a id="quiz-home-btn">Home</a></p>
+  </div>
+  <div id="quiz-start-screen">
+    <p><a href="#" id="quiz-start-btn" class="quiz-button">Start</a></p>
+  </div>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+<script src="../dist/jquery.quiz-min.js"></script>
+<script>
+  $('#quiz').quiz({
+    //resultsScreen: '#results-screen',
+    //counter: false,
+    //homeButton: '#custom-home',
+    counterFormat: 'Question %current of %total',
+    questions: [
+      {
+        'q': 'When was the Air Jordan line of shoes released?',
+        'options': [
+          '1800',
+          '1985',
+          '2011',
+          '1987'
+        ],
+        'correctIndex': 1,
+        'correctResponse': 'That is correct!',
+        'incorrectResponse': 'Wrong :( the corrent year is 1985.'
+      },
+
+
+      {
+        'q': 'Which one of these does not fit in with the nike collection?',
+        'options': [
+          'Nike SB',
+          'Air Jordan',
+          'Air Yeezy',
+          'Nike air max'
+        ],
+        'correctIndex': 2,
+        'correctResponse': 'That is correct!',
+        'incorrectResponse': 'Worng :( Yeezy is not apart of nike anymore.'
+      },
+
+
+      {
+        'q': 'Where did the sneakerhead originate?',
+        'options': [
+          'Russia',
+          'Canada',
+          'New Zealand',
+          'United States'
+        ],
+        'correctIndex': 3,
+        'correctResponse': 'That is correct!',
+        'incorrectResponse': 'Wrong :( Sneaker culture originated in the United States.'
+      },
+
+
+      {
+        'q': 'What century saw the sneakerhead culture ?',
+        'options': [
+          '18th Century',
+          '19th Century',
+          '21st Century',
+          '20th Century'
+        ],
+        'correctIndex': 3,
+        'correctResponse': 'That is correct!',
+        'incorrectResponse': 'Wrong :( sneaker culture started in the 20th century '
+      },
+
+
+      {
+        'q': 'Which rap group was the first to publicly endorse sneakers in their music?',
+        'options': [
+          'Run-D.M.C.',
+          'Wu-tang-clan',
+          'N.W.A.',
+          'Kanye West'
+        ],
+        'correctIndex': 0,
+        'correctResponse': 'That is correct!',
+        'incorrectResponse': 'Wrong :( Run-D.M.C. were the first to endorse sneakers in music'
+      },
+
+
+      {
+        'q': 'How many different styles of Air Jordans have been created by Nike since they debuted in 1984?',
+        'options': [
+          '1',
+          '30',
+          '19',
+          '100'
+        ],
+        'correctIndex': 1,
+        'correctResponse': 'That is correct!',
+        'incorrectResponse': 'Wrong :( there have been 30 different styles of Jordans since they debuted'
+      },
+
+
+      {
+        'q': 'In 2010, video producer and fashion designer Vashtie Kola became the first woman to land an iconic sneaker design deal. Which shoe did she design?',
+        'options': [
+          'Jordan 1',
+          'Jordan 6',
+          'Jordan 3',
+          'Jordan 2'
+        ],
+        'correctIndex': 3,
+        'correctResponse': 'That is correct!',
+        'incorrectResponse': 'Wrong :( It was the Jordan 2 she designed'
+      },
+
+
+      {
+        'q': 'True or False: Rubber-soled shoes were called "sneakers" because they were so quiet, a person wearing them could sneak up on someone.',
+        'options': [
+          'True',
+          'False',
+        ],
+        'correctIndex': 0,
+        'correctResponse': 'That is correct!',
+        'incorrectResponse': 'Wrong :('
+      },
+
+
+      {
+        'q': 'What cult 80s teen film helped bring Vans into the sneaker culture?',
+        'options': [
+          'Fast Times at Ridgemont High',
+          'The Breakfast Club',
+          'Full Metal Jacket',
+          'The Outsiders'
+        ],
+        'correctIndex': 0,
+        'correctResponse': 'That is correct!',
+        'incorrectResponse': 'Wrong :( It was Fast Times at Ridgemont High'
+      },
+
+
+      {
+        'q': 'Where can you find the biggest sneaker collection in the world?',
+        'options': [
+          'New York',
+          'Las Vegas',
+          'L.A.',
+          'SLC'
+        ],
+        'correctIndex': 1,
+        'correctResponse': 'That is correct!',
+        'incorrectResponse': 'Wrong :( the largest collection is in Las Vegas'
+      },
+    ]
+  });
+</script>
+</body>
+</html>

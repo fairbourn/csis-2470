@@ -1,0 +1,503 @@
+
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Mobil App Demo</title>
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/normalize.css" rel="stylesheet" type="text/css"/>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script>
+            $(document).ready(function () {
+                // add code here
+
+            });
+
+        </script>
+        <style>
+            nav form#search {
+                float: right;
+                padding: 0.5em;
+            }
+
+            nav form#search .glyphicon-search {
+                z-index: 99;
+                position: absolute;
+                right: 0.7em;
+                top: 50%;
+                margin-top: -0.44em;
+            }
+
+            nav form#search .input-group .form-control {
+                border-radius: 0.25em;
+            }
+            .navbar-default {
+                background-color: #2F92CA;
+            }
+            .navbar-default .navbar-nav > li > a,
+            .navbar-default .navbar-nav > li > a:hover {
+                color: #FFF;
+                -webkit-transition: all 150ms ease-in-out;
+                -moz-transition: all 150ms ease-in-out;
+                -ms-transition: all 150ms ease-in-out;
+                -o-transition: all 150ms ease-in-out;
+                transition: all 150ms ease-in-out;
+            }
+
+            .navbar-default .navbar-nav > .active > a {
+                background-color: transparent;
+                color: #FFF;
+                padding-bottom: 0.62em;
+                border-bottom: 0.45em solid #FFF;}
+
+            .navbar-default .navbar-nav > .active > a:hover,
+            .navbar-default .navbar-nav > li > a:hover {
+                background-color: transparent;
+                color: #F3F3F3;
+                padding-bottom: 0.62em;
+                border-bottom: 0.45em solid #F3F3F3;
+            }
+            .navbar-nav .badge {
+                color: #2F92CA;
+                background-color: #FFF;
+                font-size: 0.7em;
+                padding: 0.27rem 0.55rem 0.2rem 0.4rem;
+                position: absolute;
+                left: 0.37rem;
+                top: 0.7rem;
+                z-index: 99;
+                border: 0.2rem solid #2F92CA;
+            }
+            .navbar-header .navbar-toggle,
+            .navbar-default .navbar-toggle:focus {
+                background-color: #57A5D2;
+            }
+
+            .navbar-default .navbar-toggle:hover {
+                background-color: #3986B3;
+            }
+
+            .navbar-default .navbar-toggle .icon-bar {
+                background-color: #FFF;
+            }
+            @media(max-width:34em){
+                .navbar-default .navbar-nav > .active > a {
+                    border-bottom: none;
+                    border-left: 0.45em solid #FFF;
+                    padding-left: 0.5em;
+                }
+            }
+            #tweet {
+                margin: 0.5em;
+            }
+            body {
+                padding-top: 4em;
+                background-color: #F5F8FA;
+            }
+            .card {
+                position: relative;
+                border: 0.1rem solid #e5e5e5;
+                border-radius: 0.4rem;
+                position: relative;
+                background-color: #FFF;
+            }
+
+            .card-block img.card-img {
+                top: 50%;
+                margin-top: -36px;
+                width: 72px;
+                border: 3px solid #FFF;
+                border-radius: 0.4rem;
+                float: left;
+                position: relative;
+                z-index: 99;
+            }
+            .card-block .card-title {
+                float: left;
+                margin: 0;
+                margin-left: 0.5em;
+            }
+
+            .card-block .card-title small {
+                display: block;
+            }
+
+            .card-block .card-text {
+                clear: both;
+                padding-top: 0.25em;
+                margin-bottom: 1.5em;
+            }
+            .card-block ul a:hover {
+                text-decoration: none;
+            }
+
+            .card-block ul .profile-stats {
+                color: #777;
+                display: block;
+                text-transform: uppercase;
+                font-size: 0.63em;
+            }
+
+            .card-block ul .profile-value {
+                color: #000;
+                font-size: 1.2em;
+                font-weight: bold;
+                color: #2F92CA;
+            }
+            .card .card-header {
+                border-radius: 0.4rem 0.4rem 0 0;
+                padding: .75rem 1.25rem;
+                background-color: #f5f5f5;
+                border-bottom: 0.1em solid #e5e5e5;
+                color: #4e5665;
+                font-weight: bold;
+            }
+            #profile-photo {
+                margin-top: 2rem;
+            }
+
+            #profile-photo ul {
+                margin: 0;
+            }
+
+            #profile-photo li {
+                width: 48%;
+                padding: 0;
+            }
+            form#new-message {
+                border-radius: 0.4rem 0.4rem 0 0;
+                padding: 1em;
+                border-bottom: 0.1em solid #CEE4F5;
+                background-color: #EBF4FB;
+            }
+
+            form#new-message .input-group-addon {
+                background-color: #FFF;
+            }
+            ul#feed {
+                margin: 0;
+            }
+
+            ul#feed li {
+                padding: 1em 1em;
+            }
+
+            ul#feed .feed-avatar {
+                width: 25%;
+                display: inline-block;
+                vertical-align: top;
+            }
+            ul#feed .feed-post {
+                width: 80%;
+                display: inline-block;
+                margin-left: 2%;
+            }
+
+            ul#feed .feed-post h5 {
+                font-weight: bold;
+                margin-bottom: 0.5rem;
+            }
+
+            ul#feed .feed-post h5 > small {
+                font-size: 1.2rem;
+            }
+            ul#feed .action-list {
+                margin-left: 13%;
+                padding-left: 1em;
+            }
+
+            ul#feed .action-list a {
+                width: 15%;
+                display: inline-block;
+            }
+
+            ul#feed .action-list a:hover {
+                text-decoration: none;
+            }
+
+            ul#feed .action-list .retweet-count {
+                padding-left: 0.2em;
+                font-weight: bold;
+            }
+            ul#feed li {
+                padding: 1em 1em;
+                border-bottom: 0.1rem solid #e5e5e5;
+            }
+
+            ul#feed li:last-child {
+                border-bottom: none;
+            }
+            div#who-follow li {
+                margin-bottom: 2em;
+            }
+
+            div#who-follow li:last-child {
+                margin-bottom: 0;
+            }
+            div#who-follow li img {
+                width: 26%;
+                display: inline-block;
+                vertical-align: top;
+                margin-right: 2%;
+            }
+
+            div#who-follow li .info {
+                width: 68%;
+                display: inline-block;
+            }
+            div#who-follow li .info strong {
+                display: block;
+                overflow:hidden;
+                text-overflow: ellipsis;
+            }
+
+            div#who-follow li .info .glyphicon {
+                color: #2F92CA;
+            }
+
+        </style>
+    </head>
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="webapp.html">
+                    <img src="imgs/logo.png" class="img-responsive" style="height: 32px">
+                </a>
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#nav-menu" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <button id="tweet" class="btn btn-default pull-right visible-xs-block" >
+                    <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+                    Tweet
+                </button>
+                <!-- <a class="btn btn-primary navbar-btn pull-left" href="#" role="button">Sign up</a> -->
+            </div>
+
+            <div id="nav-menu" class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="#">
+                            <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
+                            Home
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span class="badge">5</span>
+                            <span class="glyphicon glyphicon-bell" aria-hidden="true"></span>
+                            Notifications
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
+                            Messages
+                        </a>
+                    </li>
+                    <li class="visible-xs-inline">
+                        <a href="#">
+                            <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+                            Profile
+                        </a>
+                    </li>
+                    <li class="visible-xs-inline">
+                        <a href="#">
+                            <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
+                            Logout
+                        </a>
+                    </li>
+                </ul>
+                <button id="tweet" class="btn btn-default pull-right hidden-xs" data-toggle="modal" data-target="#tweet-modal">
+                    <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+                    Tweet
+                </button>
+                <div id="nav-options" class="btn-group pull-right hidden-xs">
+                    <button type="button" class="btn btn-default dropdown-toggle thumbnail" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <img src="imgs/tlogo.png" style="height:32px">
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a href="#">Profile</a></li>
+                        <li><a href="#">Setting</a></li>
+                        <li role="separator" class="divider"></li>
+                        <li><a href="#">Logout</a></li>
+                    </ul>
+                </div>
+
+                <form id="search" role="search" class="hidden-sm hidden-xs">
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="Search...">
+                        <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </nav>
+    <body>
+        <div class="container">
+            <div class="row">
+                <div id="profile" class="col-md-3 hidden-sm hidden-xs">
+                    <div id="profile-resume" class="card">
+                        <img class="card-img-top img-responsive" src="imgs/landscape.jpg">
+                        <div class="card-block">
+                            <img src="imgs/ye.jpg" class="card-img">
+                            <h4 class="card-title">Black Mesa <small>@ye</small></h4>
+                            <p class="card-text">apple.co/DONDA</p>
+                            <ul class="list-inline list-unstyled">
+                                <li id="card-tweets">
+                                    <a href="#">
+                                        <span class="profile-stats">Tweets</span>
+                                        <span class="profile-value">314</span>
+                                    </a>
+                                </li>
+                                <li class="card-following">
+                                    <a href="#">
+                                        <span class="profile-stats">Following</span>
+                                        <span class="profile-value">1</span>
+                                    </a>
+                                </li>
+                                <li class="card-followers">
+                                    <a href="#">
+                                        <span class="profile-stats">Followers</span>
+                                        <span class="profile-value">17.6M</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div id="profile-photo" class="card">
+                            <div class="card-header">Photos</div>
+                            <div class="card-block">
+                                <ul class="list-inline list-unstyled">
+                                    <li>
+                                        <a href="#" class="thumbnail"><img class="img-responsive" src="imgs/mbdtf.jpg"></a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="thumbnail"><img class="img-responsive" src="imgs/donda.jpg"></a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="thumbnail"><img class="img-responsive" src="imgs/yee.jpg"></a>
+                                    </li>
+                                    <li>
+                                        <a href="#" class="thumbnail"><img class="img-responsive" src="imgs/kid.jpg"></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="main" class="col-sm-12 col-md-6">
+                    <ol class="breadcrumb card">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Profile</a></li>
+                        <li class="active">Feed</li>
+                    </ol>
+                    <div id="main-card" class="card">
+                        <form id="new-message">
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="What is happening?">
+                                <span class="input-group-addon">
+                                    <span class="glyphicon glyphicon-camera" aria-hidden="true"></span>
+                                </span>
+                            </div>
+                        </form>
+                        <ul id="feed" class="list-unstyled">
+                            <li>
+                                <img src="imgs/bb.jpg" class="feed-avatar img-circle">
+                                <div class="feed-post">
+                                    <h5>Name <small>@Big_Ben_Clock - 3h</small></h5>
+                                    <p> BONG BONG BONG BONG BONG</p>
+                                </div>
+                                <div class="action-list">
+                                    <a href="#">
+                                        <span class="glyphicon glyphicon-share-alt" aria-hidden="true"></span>
+                                    </a>
+                                    <a href="#">
+                                        <span class="glyphicon glyphicon-refresh " aria-hidden="true"></span>
+                                        <span class="retweet-count">6</span>
+                                    </a>
+                                    <a href="#">
+                                        <span class="glyphicon glyphicon-star" aria-hidden="true"></span>
+                                    </a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <nav class="text-center">
+                        <ul class="pagination pagination-lg">
+                            <li class="disabled"><a href="#" aria-label="Previous"><span aria-hidden="true">&laquo;</span></a></li>
+                            <li class="active"><a href="#">1 <span class="sr-only">(current)</span></a></li>
+                            <li><a href="#">2</a></li>
+                            <li class="disabled"><a href="#">...</a></li>
+                            <li><a href="#">3</a></li>
+                            <li><a href="#">4</a></li>
+                            <li><a href="#" aria-label="Next"><span aria-hidden="true">&raquo;</span></a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div id="right-content" class="col-md-3 hidden-sm hidden-xs">
+                    <div id="who-follow" class="card">
+                        <div class="card-header">
+                            Who to follow
+                        </div>
+                        <div class="card-block">
+                            <ul class="list-unstyled">
+                                <li>
+                                    <img src="imgs/offwhite.png" class="img-rounded">
+                                    <div class="info">
+                                        <strong>Off White</strong>
+                                        <button class="btn btn-default">
+                                            <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Follow
+                                        </button>
+                                    </div>
+                                </li>
+                                <li>
+                                    <img src="imgs/coleman.png" class="img-rounded">
+                                    <div class="info">
+                                        <strong>Coleman Fairbourn</strong>
+                                        <button class="btn btn-default">
+                                            <span class="glyphicon glyphicon-plus" aria-hidden="true"></span> Follow
+                                        </button>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </body>
+    <div class="modal fade" id="tweet-modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 class="modal-title">Modal title</h4>
+                </div>
+                <div class="modal-body">
+                    Modal content
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">
+                        Close
+                    </button>
+                    <button type="button" class="btn btn-primary">
+                        Save changes
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</html>
