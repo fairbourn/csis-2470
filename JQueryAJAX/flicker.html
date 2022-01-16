@@ -1,0 +1,68 @@
+
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Flickr Feed</title>
+        <link href="css/site.css" rel="stylesheet">
+        <style>
+            .image {
+                float: left;
+                padding: 10px;
+                border: solid 1px rgb(27,45,94);
+                background-color: white;
+                margin: 0 30px 30px 0;
+            }
+            .image:hover {
+                border-color: red;
+                background-color: rgb(204,204,204);
+            }
+        </style>
+        <script src="js/jquery.min.js"></script>
+        <script>
+            $(document).ready(function () {
+                var URL = "https://api.flickr.com/services/feeds/groups_pool.gne?jsoncallback=?";
+                var searchInfo = {
+                    // change this ID to another flickr ID (like your own if you have one)
+                    id: "66366301@N00",
+                    format: "json"
+                };
+
+                $.getJSON(URL, searchInfo, function (data) {
+                    console.log(data);
+                    $('h1').text(data.title);
+                    var photoHTML = '';
+                    $.each(data.items, function (i, photo) {
+                        photoHTML += '<span class="image">';
+                        photoHTML += '<a href="' + photo.link + '">';
+                        photoHTML += '<img src="' + photo.media.m.replace('_m', '_s') + '"></a></span>';
+                    }); // end each
+                    $('#photos').append(photoHTML);
+                }); // end get JSON
+            }); // end ready
+        </script>
+    </head>
+    <body>
+        <div class="wrapper">
+            <header>
+                Sick Kicks!
+            </header>
+            <div class="content">
+                <div class="main">
+                    <h1>Sick Kicks</h1>
+                    <div id="photos"></div>
+                    <br class="clearLeft">
+                </div>
+            </div>
+
+            <footer>
+                <p>Exercise 10 for CSIS 2470, Darren Hunter</p>
+            </footer>
+        </div>
+    </body>
+</html>
