@@ -1,0 +1,25 @@
+header formating
+*{margin: 0; padding: 0;}
+ul li, ul li a
+{
+  display: inline-block;
+  border: 2px solid white;
+  border-radius: 25px;
+}
+body{
+    font-family: "Audiowide", sans-serif;
+    min-height: 100%;
+    background-repeat: no-repeat;
+    background-color: white;
+    background-image: linear-gradient(red,yellow, greenyellow, springgreen, aqua, indigo);
+    text-align: left;
+}
+h1{
+  color: indigo;
+}
+div.central{
+  color: indigo;
+}
+html{
+  min-height: 100%;
+}

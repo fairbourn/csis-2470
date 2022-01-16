@@ -1,0 +1,61 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+      <!--keep in specific order -->
+        <script type="text/javascript" src="jquery.js"></script>
+        <script type="text/javascript" src="jquery-cycle-all.js"></script>
+        <script type="text/javascript" src="Info.js"></script>
+        <script type="text/javascript">
+            var html = '';
+            $(document).ready(function () {
+                //console.log('ready');
+                $.getJSON('things.json', function (data) {
+                    //console.log(data);
+                    $.each(data, function (key, value) {
+                        $.each(value, function (index, stuff) {
+                            html += '<div  class="hobby">';
+                            html += '<h2 id="title">' + stuff.Title + '</h2>';
+                            html += '<p onclick="info(' + stuff.id + ')"><img src="' + stuff.Source
+                                    + '" style="max-width:100%;max-height:100%;"></p></div>';
+                        });
+                    });
+                    //console.log(html);
+                    $('#hobby').html(html);
+                    //this is the cycle
+                    $('#hobby').cycle({
+                        fx: 'fade',
+                        pause: '1',
+                        prev: '#prev',
+                        next: '#next',
+                        speed: 500,
+                        timeout: 10000
+                    });
+                });
+            });
+
+
+        </script>
+        <title>Things I like </title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div id="main">Things I Like</div>
+        <div>
+            <table style="width:500px">
+                <tr style ="height: auto">
+                    <td><a href="#" id="prev">Previous</a></td>
+                    <td style="width:300px; height: auto"><div id = "hobby"></div></td>
+                    <td><a href="#" id="next">Next</a></td>
+                </tr>
+            </table>
+        </div>
+        <div id="information">
+            <figure>
+
+                <figcaption></figcaption>
+            </figure>
+        </div>
+    </body>
+</html>

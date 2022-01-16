@@ -1,0 +1,137 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>JQuery Animation Examples</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="js/jquery.min.js"></script>
+        <script>
+            $(document).ready(function () {
+
+            //show the ship
+                $('#Gallery a').click(function (evt) {
+                    evt.preventDefault();
+                    var imgPath = $(this).attr('href');
+                    var oldImage = $('#ship img');
+                    var newImage = $('<img src="' + imgPath + '" width="700" height="650">');
+                    newImage.hide();
+                    $('#ship').prepend(newImage);
+                    newImage.fadeIn(2000);
+                    oldImage.fadeOut(2000, function () {
+                        $(this).remove();
+                    });
+                });
+
+                $('#Gallery img').each(function () {
+                    var imgFile = $(this).attr('src');
+                    var preloadImage = new Image();
+                    var imgExt = /(\.\w{3,4}$)/;
+                    preloadImage.src = imgFile.replace(imgExt, '_p$1');
+
+                    $(this).hover(
+                            function () {
+                                $(this).attr('src', preloadImage.src);
+                            },
+                            function () {
+                                $(this).attr('src', imgFile);
+                            }
+                    ); 
+                });
+
+
+                //drop down login
+                $("#flip").click(function () {
+                    $("#panel").slideToggle("slow");
+                });
+            });
+
+        </script>
+
+        <style>
+
+            h1{
+              text-align: center;
+              font-family: "Audiowide", sans-serif;
+            }
+
+            #panel, #flip {
+                padding: 5px;
+                text-align: center;
+                background-color: #e5eecc;
+                border: solid 1px #c3c3c3;
+            }
+
+            #panel {
+                padding: 50px;
+                display: none;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="flip">Click here to log in</div>
+        <div id="panel">
+            <form name="form1" method="post" action="#">
+                <table width="100%" border="0" cellpadding="3" cellspacing="1" bgcolor="#FFFFFF">
+
+                    <tr>
+                        <td colspan="3"><strong>Member Login </strong></td>
+
+                    </tr>
+                    <tr>
+                        <td width="78">Username</td>
+                        <td width="6">:</td>
+                        <td width="294"><input name="myusername" type="text" id="myusername"></td>
+                    </tr>
+                    <tr>
+                        <td>Password</td>
+                        <td>:</td>
+                        <td><input name="mypassword" type="password" id="mypassword">
+
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                        <td>&nbsp;</td>
+                        <td><input type="submit" name="Submit" value="Login"></td>
+                    </tr>
+
+                    <tr>
+                        <td>
+
+                            <a href="#">Create an Account</a>
+
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+        <div >
+            <h1>Rollover Images</h1>
+            <p>Mouse over the images below</p>
+            <div id="Gallery">
+                <a href="images/tie.jpg">
+                    <img src="images/tie.jpg" width="140" height="140" alt="Tie">
+                </a>
+                <a href="images/vader.jpg">
+                    <img src="images/vader.jpg" width="140" height="140" alt="Tie">
+                </a>
+                <a href="images/slave1.jpg">
+                    <img src="images/slave1.jpg" width="140" height="140" alt="Tie">
+                </a>
+                <a href="images/millenniumfalcon.jpg">
+                    <img src="images/millenniumfalcon.jpg" width="140" height="140" alt="Tie">
+                </a>
+                <a href="images/xwing.jpg">
+                    <img src="images/xwing.jpg" width="140" height="140" alt="Tie">
+                </a>
+
+            </div>
+            <div id="ship">
+
+            </div>
+
+        </div>
+    </body>
+</html>

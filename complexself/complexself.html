@@ -1,0 +1,79 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>H1 JSON/JavaScript Complex Self</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <script>
+
+//Name(string)
+        var name = "Coleman Fairbourn";
+        console.log(name)
+//Age(int)
+        var age = 21;
+        console.log(age)
+
+//Married(boolean)
+        let married = false;
+        console.log(married)
+
+//Classes(Array of class numbers)
+        var classes = [];
+        classes[0]= "CSIS-1032: INTRODUCTION TO LINUX";
+        classes[1]= "CSIS-1121: CompTIA A+ Essentials";
+        classes[2]= "CSIS-2240: Web Programming";
+        classes[3]= "CSIS-2470: Advanced JavaScript";
+
+        //Hobbies(Objects with values "hobbyname": "short description")
+        var hobby = new Object();
+        hobby.hobbyname = "Silver Smithing";
+        hobby.shortdescription = "involves a silversmith who crafts objects from silver into things like jewelry.";
+
+        console.log(hobby.hobbyname)
+        console.log(hobby.shortdescription)
+
+        </script>
+</head>
+<body>
+<div>
+<h2>About Me</h2>
+
+<!--outputs-->
+<p id="name"></p>
+<script>
+document.getElementById("name").innerHTML = "my name is " + name;
+</script>
+
+<!--outputs-->
+<p id="age"></p>
+<script>
+document.getElementById("age").innerHTML = "my age is " + age;
+</script>
+
+<!--outputs-->
+<p id="married"></p>
+<script>
+if (married){
+   document.getElementById("married").innerHTML = "I Am Married";
+}else{
+   document.getElementById("married").innerHTML = "I Am Not Married";
+}
+</script>
+
+<!--outputs-->
+<p id="classes"></p>
+<script>
+document.getElementById("classes").innerHTML = "My Favorite Class Is " + classes[3];
+</script>
+
+<!--outputs-->
+<p id="hobby"></p>
+<script>
+document.getElementById("hobby").innerHTML = "My Favorite hobby Is " + hobby.hobbyname + ". " + hobby.hobbyname + " " + hobby.shortdescription;
+</script>
+
+</div>
+</body>
+</html>

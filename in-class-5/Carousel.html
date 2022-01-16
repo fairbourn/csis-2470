@@ -1,0 +1,63 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+      <!--keep in specific order -->
+        <script type="text/javascript" src="jquery.js"></script>
+        <script type="text/javascript" src="jquery-cycle-all.js"></script>
+        <script type="text/javascript" src="bookInfo.js"></script>
+        <script type="text/javascript">
+            var html = '';
+            $(document).ready(function () {
+                //console.log('ready');
+                $.getJSON('products.json', function (data) {
+                    //console.log(data);
+                    $.each(data, function (key, value) {
+                        $.each(value, function (index, stuff) {
+                            console.log(index + " " + stuff.Author);
+                            html += '<div  class="books">';
+                            html += '<h2 id="title">' + stuff.Title + '</h2>';
+                            html += '<h4>' + stuff.Author + '</h4>';
+                            html += '<p onclick="bookinfo(' + stuff.id + ')"><img src="' + stuff.Source
+                                    + '" style="max-width:100%;max-height:100%;"></p></div>';
+                        });
+                    });
+                    //console.log(html);
+                    $('#books').html(html);
+                    //this is the cycle
+                    $('#books').cycle({
+                        fx: 'fade',
+                        pause: '1',
+                        prev: '#prev',
+                        next: '#next',
+                        speed: 500,
+                        timeout: 10000
+                    });
+                });
+            });
+
+
+        </script>
+        <title>Book Carousel</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <div id="main">Books Carousel</div>
+        <div>
+            <table style="width:500px">
+                <tr style ="height: auto">
+                    <td><a href="#" id="prev">Previous</a></td>
+                    <td style="width:300px; height: auto"><div id = "books"></div></td>
+                    <td><a href="#" id="next">Next</a></td>
+                </tr>
+            </table>
+        </div>
+        <div id="information">
+            <figure>
+
+                <figcaption></figcaption>
+            </figure>
+        </div>
+    </body>
+</html>

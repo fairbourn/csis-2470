@@ -1,0 +1,188 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>JavaScript Basics with JSON Format</title>
+        <link rel="stylesheet" href="layout.css" type="text/css">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script>
+        //var containing questions
+            var data = {"Adventure": [
+                    {
+                      //question 1:
+                        "place": "1. More Human Twins Are Being Born Now Than Ever Before.",
+
+                        "option1": {
+                            "text": "True",
+                            "value": 10},
+                         //for adding more question
+                        //"option3": {"text": "test",
+                          //  "value": 0},
+
+                        "option2": {"text": "False",
+                            "value": 0},
+
+
+                    },
+                    {
+                      //question 2:
+                        "place": "2. How fast was the first person convicted of speeding going?",
+
+                        "option1": {
+                            "text": "26 MPH",
+                            "value": 0},
+
+                        "option2": {"text": "8 MPH",
+                            "value": 10}
+
+                    },
+                    {
+                      //question 3:
+                        "place": "3. Where is the hottest spot on the planet?",
+
+                        "option1": {
+                            "text": "El Aziza, Libya",
+                            "value": 10},
+
+                        "option2": {"text": "Salt Lake City, Utah",
+                            "value": 0}
+
+                    },
+                    {
+                      //question 4:
+                        "place": "4. How many trees die daily to make toilet paper for humans?",
+
+                        "option1": {
+                            "text": "27,000 trees",
+                            "value": 10},
+
+                        "option2": {"text": "8,971 trees",
+                            "value": 0}
+
+                    },
+                    {
+                      //question 5:
+                        "place": "5. Who was the first computer programmer?",
+
+                        "option1": {
+                            "text": "Ada Lovelace",
+                            "value": 10},
+
+                        "option2": {"text": "Coleman John Fairbourn",
+                            "value": 0}
+
+                    },
+                    {
+                      //question 6:
+                        "place": "6. How old was Mozart when he started to compose music?",
+
+                        "option1": {
+                            "text": "15",
+                            "value": 0},
+
+                        "option2": {"text": "5",
+                            "value": 10}
+
+                    },
+                    {
+                      //question 7:
+                        "place": "7. Which US state was once a country?",
+
+                        "option1": {
+                            "text": "Texas",
+                            "value": 10},
+
+                        "option2": {"text": "Utah",
+                            "value": 0}
+
+                    },
+                    {
+                      //question 8:
+                        "place": "8. What was the first song to play on mars?",
+
+                        "option1": {
+                            "text": "Happy Birthday",
+                            "value": 10},
+
+                        "option2": {"text": "Dancing Queen",
+                            "value": 0}
+
+                    },
+                    {
+                      //question 9:
+                        "place": "9. Who is the only band to play on all 7 continents?",
+
+                        "option1": {
+                            "text": "Queen",
+                            "value": 0},
+
+                        "option2": {"text": "Metallica",
+                            "value": 10}
+
+                    },
+                    {
+                      //question 10:
+                        "place": "10. People Blink Less When They Use Computers",
+
+                        "option1": {
+                            "text": "False",
+                            "value": 0},
+
+                        "option2": {"text": "True",
+                            "value": 10}
+
+                    },
+                    {
+
+                      //question bonus:
+                        "place": "Bonus points. This Quiz Was Fun",
+
+                        "option1": {
+                            "text": "True",
+                            "value": 20},
+
+                        "option2": {"text": "False",
+                            "value": 0},
+
+
+                    }
+                ]}
+            //point counter
+            var points = 0;
+            var question = 0;
+            function Quiz(choice) {
+                points = points + parseInt(choice);
+
+                //options
+                if (question < 11) {
+                    document.getElementById("placeholder").innerHTML = "<form><p>" + data.Adventure[question].place + "</p><p> "
+                            + "<input type=\"radio\" value=  " + data.Adventure[question].option1.value + " onchange=\"Quiz(this.value)\">"
+                            + data.Adventure[question].option1.text
+
+                            //for more questions
+                            //+ "<br><input type=\"radio\" value=  " + data.Adventure[question].option3.value + " onchange=\"Quiz(this.value)\">"
+                            //+ data.Adventure[question].option3.text
+
+                            + "<br><input type=\"radio\" value= " + data.Adventure[question].option2.value + " onchange=\"Quiz(this.value)\">"
+                            //displays the "You have x points"
+                            + data.Adventure[question].option2.text + "</form><p> You have " + points + " points";
+                } else {
+                    document.getElementById("placeholder").innerHTML = "<p> You got " + points + " points. Awesome Job!" ;
+
+                }
+                question++;
+            }
+        </script>
+    </head>
+          <body>
+               <div id="placeholder" alighn+"center">
+                    <form>
+                        <p>Press Start!</p>
+                        <p>
+                            <input type="radio" value="0" onchange="Quiz(this.value)">Start!
+                        </p>
+                    </form>
+                </div>
+         </body>
+</html>

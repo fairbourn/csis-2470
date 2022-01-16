@@ -1,0 +1,18 @@
+{
+  "people": [
+    { "name": "Coleman", "last": "Fairbourn", "relation": "Creator" },
+    { "name": "Sam", "last": "Fairbourn", "relation": "Brother" },
+    { "name": "Elias", "last": "Fairbourn", "relation": "Brother" },
+    { "name": "Blue", "last": "Rodriguez", "relation": "Sister" },
+    { "name": "Matt", "last": "Fairbourn", "relation": "Father" },
+    { "name": "David", "last": "Fairbourn", "relation": "Grandpa" },
+    { "name": "Eliza", "last": "Fairbourn", "relation": "Mother" },
+    { "name": "Joshua", "last": "Moore", "relation": "Friend" },
+    { "name": "Lemon", "last": " ", "relation": "Dog" },
+    { "name": "Baily", "last": " ", "relation": "Dog" },
+    { "name": "Dustin", "last": "Kempton", "relation": "Cousin" },
+    { "name": "Debbie", "last": "Fairbourn", "relation": "Grandma" },
+    { "name": "Linda", "last": "Law", "relation": "Grandma" },
+    { "name": "Parker", "last": "Jensen", "relation": "Friend" }
+  ]
+}

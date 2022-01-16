@@ -1,0 +1,47 @@
+{
+    "hobby": [{
+            "Title": "Banjo",
+            "Source":"images/banjo.jpg",
+            "id": 1,
+            "desc": "The banjo is a stringed instrument with a thin membrane stretched over a frame or cavity to form a resonator. The membrane is typically circular, and usually made of plastic, or occasionally animal skin. I have been playing for 7 years."
+        },
+        {
+
+            "Title": "Hiking",
+            "Source":"images/hiking.jpg",
+            "id": 2,
+            "desc": "Hiking is a long, vigorous walk, usually on trails or footpaths in the countryside. Walking for pleasure developed in Europe during the eighteenth century."
+        },
+        {
+
+            "Title": "Silversmithing",
+            "Source":"images/silversmithing.jpg",
+            "id": 3,
+            "desc": "A silversmith is a metalworker who crafts objects from silver. The terms silversmith and goldsmith are not exactly synonyms as the techniques, training, history, and guilds are or were largely the same but the end product may vary greatly as may the scale of objects created.I have been silver smithing for 4 years I stared it in a highschool class and fell in love with it."
+        },
+        {
+
+            "Title": "Snowboarding",
+            "Source":"images/snowboarding.jpg",
+            "id":4,
+            "desc": "Snowboarding is a recreational and competitive activity that involves descending a snow-covered slope while standing on a snowboard that is almost always attached to a rider's feet. My favorite place to go is Brighton."
+
+        },
+        {
+
+            "Title": "Woodworking",
+            "Source":"images/woodworking.jpg",
+            "id":5,
+            "desc": "Woodworking is the skill of making items from wood, and includes cabinet making, wood carving, joinery, carpentry, and woodturning. I started woodworking 7 years ago. The firsth thing I made were wooden pens."
+        },
+
+        {
+
+            "Title": "Coding",
+            "Source":"images/coding.jpg",
+            "id":6,
+            "desc": "Computer programming is the process of designing and building an executable computer program to accomplish a specific computing result or to perform a specific task. I only starting coding a year ago but I have enjoyed it very much."
+
+        }
+      ]
+}

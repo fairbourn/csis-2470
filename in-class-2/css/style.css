@@ -1,0 +1,7 @@
+*{margin: 0; padding: 0; box-sizing: border-box;}
+/*this covers the body and the background image/fonts/colors*/
+body{
+background-color: cornsilk;
+background-size: cover;
+text-align: center;
+}
